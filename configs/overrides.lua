@@ -44,8 +44,9 @@ M.nvimtree = {
   git = {
     enable = true,
   },
-
   renderer = {
+    full_name = true,
+    root_folder_label = ":~:s?$?/..?",
     highlight_git = true,
     icons = {
       show = {
@@ -67,7 +68,7 @@ M.cmp = {
 }
 
 M.telescope = {
-  extensions_list = { "themes", "terms", "projects"},
+  extensions_list = { "themes", "terms", "projects", "todo-comments" },
 }
 
 return M
