@@ -3,7 +3,6 @@ local cmp = require "cmp"
 
 ---@type NvPluginSpec[]
 local plugins = {
-
   -- Override plugin definition options
 
   {
@@ -58,7 +57,6 @@ local plugins = {
         { name = "buffer" },
       },
     }),
-
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
@@ -82,15 +80,34 @@ local plugins = {
   {
     "ahmedkhalf/project.nvim",
     config = function()
-      require("project_nvim").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("project_nvim").setup {}
     end,
     event = "VimEnter",
   },
 
+  {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    opts = function()
+      return require "custom.configs.todo-comments"
+    end,
+    config = function(_, opts)
+      require("todo-comments").setup(opts)
+    end,
+  },
+
+  {
+    "danymat/neogen",
+    opts = function()
+      return require "custom.configs.neogen"
+    end,
+    config = function(_, opts)
+      require("neogen").setup(opts)
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
