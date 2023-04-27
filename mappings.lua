@@ -32,6 +32,7 @@ M.telescope = {
   n = {
     -- find
     ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "find projects" },
+    ["<leader>d"] = { "<cmd> Telescope diagnostics <CR>", "show diagnostics" },
   },
 }
 
