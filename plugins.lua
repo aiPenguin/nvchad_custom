@@ -108,6 +108,15 @@ local plugins = {
     -- Uncomment next line if you want to follow only stable versions
     -- tag = "*"
   },
+
+  {
+    "enddeadroyal/symbols-outline.nvim",
+    branch = "bugfix/symbol-hover-misplacement",
+    event = "BufRead",
+    config = function()
+      require("symbols-outline").setup()
+    end,
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
