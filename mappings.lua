@@ -135,7 +135,7 @@ require("core.utils").load_mappings("todo_comments")
 M.noegen = {
   plugin = true,
   n = {
-    ["<leader>ng"] = {
+    ["<leader>a"] = {
       function()
         require("neogen").generate()
       end,
