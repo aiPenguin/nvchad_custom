@@ -1,6 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
 local opt = vim.opt
-local diagnostic = vim.diagnostic
 
 -- Auto resize panes when resizing nvim window
 autocmd("VimResized", {
@@ -19,3 +18,18 @@ for i = 1, 9, 1 do
   end)
 end
 
+-- Spell check
+opt.spell = true
+
+-- vim.opt.foldmethod     = 'expr'
+-- vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+---WORKAROUND
+autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
+  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+  callback = function()
+    opt.foldmethod     = 'expr'
+    opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+    opt.foldlevelstart = 99
+  end
+})
+---ENDWORKAROUND
