@@ -5,6 +5,7 @@ M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
+    ["<leader>fm"] = { "<cmd> set foldmethod=manual <CR>", "set fold method to manual" },
   },
 }
 
