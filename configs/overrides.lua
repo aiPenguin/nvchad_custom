@@ -30,12 +30,15 @@ M.mason = {
     "css-lsp",
     "html-lsp",
     "typescript-language-server",
-    "deno",
     "prettier",
 
     -- python
     "pyright",
     "black",
+
+    -- cpp
+    "clangd",
+    "clang-format",
   },
 }
 
