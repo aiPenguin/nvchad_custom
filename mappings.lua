@@ -5,20 +5,20 @@ M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
-    ["<leader>fm"] = { "<cmd> set foldmethod=manual <CR>", "set fold method to manual" },
+    ["<leader>fd"] = { "<cmd> set foldmethod=manual <CR>", "set fold method to manual" },
   },
 }
 
 M.nvterm = {
   n = {
     -- new
-    ["<leader>th"] = {
+    ["<leader>ht"] = {
       function()
         require("nvterm.terminal").new "horizontal"
       end,
       "new horizontal term",
     },
-    ["<leader>tv"] = {
+    ["<leader>vt"] = {
       function()
         require("nvterm.terminal").new "vertical"
       end,
