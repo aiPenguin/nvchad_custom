@@ -8,6 +8,8 @@ M.treesitter = {
     "css",
     "javascript",
     "c",
+    "cpp",
+    "cmake",
     "markdown",
     "markdown_inline",
     "python",
@@ -39,6 +41,10 @@ M.mason = {
     -- cpp
     "clangd",
     "clang-format",
+
+    -- cmake
+    "cmake-language-server",
+    "cmakelang",
   },
 }
 

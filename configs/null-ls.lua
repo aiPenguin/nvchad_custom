@@ -30,6 +30,9 @@ local sources = {
       to_stdin = true,
     },
   },
+
+  -- cmake
+  b.formatting.cmake_format,
 }
 
 null_ls.setup {
