@@ -6,6 +6,8 @@ M.general = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
     ["<leader>fd"] = { "<cmd> set foldmethod=manual <CR>", "set fold method to manual" },
+    ["<leader>nb"] = { "<cmd> enew <CR>", "new buffer" },
+    ["<leader>ln"] = { "<cmd> set nu! <CR>", "toggle line number" },
   },
 }
 
@@ -34,6 +36,7 @@ M.telescope = {
     -- find
     ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "find projects" },
     ["<leader>d"] = { "<cmd> Telescope diagnostics <CR>", "show diagnostics" },
+    ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
   },
 }
 
