@@ -8,6 +8,7 @@ M.general = {
     ["<leader>fd"] = { "<cmd> set foldmethod=manual <CR>", "set fold method to manual" },
     ["<leader>nb"] = { "<cmd> enew <CR>", "new buffer" },
     ["<leader>ln"] = { "<cmd> set nu! <CR>", "toggle line number" },
+    ["<leader>hD"] = { "<cmd> diffoff <CR>", "closs diffview" },
   },
 }
 
@@ -90,7 +91,6 @@ M.gitsigns = {
       end,
       "diffthis",
     },
-    ["<leader>hD"] = { "<cmd> diffoff <CR>", "closs diffview" },
     ["<leader>td"] = {
       function()
         require("gitsigns").toggle_deleted()
