@@ -19,7 +19,7 @@ for i = 1, 9, 1 do
 end
 
 -- Spell check
-opt.spell = true
+-- opt.spell = true
 
 -- vim.opt.foldmethod     = 'expr'
 -- vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
