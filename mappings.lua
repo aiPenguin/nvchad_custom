@@ -39,14 +39,11 @@ M.tabufline = {
 }
 
 M.telescope = {
-  plugin = true,
   n = {
     -- find
     ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "find projects" },
     ["<leader>d"] = { "<cmd> Telescope diagnostics <CR>", "show diagnostics" },
     ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
-    -- git
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
     -- pick a hidden term
     ["<leader>tt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },
   },
@@ -143,23 +140,16 @@ M.gitsigns = {
 M.todo_comments = {
   plugin = true,
   n = {
-    ["<leader>m"] = { "<cmd> Telescope todo-comments <CR>", "show TODOs" },
+    ["<leader>m"] = { "<cmd> TodoTelescope <CR>", "show TODOs" },
   },
 }
-require("core.utils").load_mappings "todo_comments"
 
 M.noegen = {
   plugin = true,
   n = {
-    ["<leader>a"] = {
-      function()
-        require("neogen").generate()
-      end,
-      "generate annotation",
-    },
+    ["<leader>a"] = { "<cmd> Neogen <CR>", "generate annotation" },
   },
 }
-require("core.utils").load_mappings "noegen"
 
 M.symbols_outline = {
   plugin = true,
@@ -167,7 +157,6 @@ M.symbols_outline = {
     ["<leader>o"] = { "<cmd> SymbolsOutline <CR>", "toggle symbols outline" },
   },
 }
-require("core.utils").load_mappings "symbols_outline"
 
 M.goto_preview = {
   plugin = true,
@@ -182,7 +171,16 @@ M.goto_preview = {
     ["<leader>pr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "preview references" },
   },
 }
-require("core.utils").load_mappings "goto_preview"
+
+M.diffview = {
+  plugin = true,
+  n = {
+    ["<leader>gd"] = { "<cmd> DiffviewOpen <CR>", "open diff view" },
+    ["<leader>gh"] = { "<cmd> DiffviewFileHistory % <CR>", "open current file history" },
+    ["<leader>gx"] = { "<cmd> DiffviewClose <CR>", "close diff view" },
+    ["<leader>gr"] = { "<cmd> DiffviewRefresh <CR>", "referesh diff view" },
+  },
+}
 
 M.disabled = {
   n = {

@@ -88,6 +88,10 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
+    cmd = "TodoTelescope",
+    init = function()
+      require("core.utils").load_mappings "todo_comments"
+    end,
     opts = require "custom.configs.todo-comments",
     config = function(_, opts)
       require("todo-comments").setup(opts)
@@ -97,6 +101,10 @@ local plugins = {
   {
     "danymat/neogen",
     lazy = true,
+    cmd = "Neogen",
+    init = function()
+      require("core.utils").load_mappings "noegen"
+    end,
     opts = require "custom.configs.neogen",
     config = function(_, opts)
       require("neogen").setup(opts)
@@ -109,6 +117,10 @@ local plugins = {
   {
     "enddeadroyal/symbols-outline.nvim",
     branch = "bugfix/symbol-hover-misplacement",
+    cmd = "SymbolsOutline",
+    init = function()
+      require("core.utils").load_mappings "symbols_outline"
+    end,
     event = "BufRead",
     config = function()
       require("symbols-outline").setup()
@@ -118,9 +130,23 @@ local plugins = {
   {
     "rmagatti/goto-preview",
     lazy = true,
+    init = function()
+      require("core.utils").load_mappings "goto_preview"
+    end,
     opts = require "custom.configs.goto-preview",
     config = function(_, opts)
       require("goto-preview").setup(opts)
+    end,
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+    init = function()
+      require("core.utils").load_mappings "diffview"
+    end,
+    config = function()
+      require("diffview").setup()
     end,
   },
   -- To make a plugin not be loaded
