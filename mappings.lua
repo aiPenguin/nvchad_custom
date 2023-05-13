@@ -30,7 +30,14 @@ M.nvterm = {
   },
 }
 
--- more keybinds!
+M.tabufline = {
+  n = {
+    -- close tabpage
+    ["<leader>X"] = { " <cmd> tabclose <CR> ", "close tabpage" },
+    ["<leader>nt"] = { " <cmd> tabnew <CR> ", "new tabpage" },
+  },
+}
+
 M.telescope = {
   plugin = true,
   n = {
@@ -179,6 +186,8 @@ require("core.utils").load_mappings "goto_preview"
 
 M.disabled = {
   n = {
+    -- general
+    ["<leader>n"] = "",
     -- nvterm
     ["<leader>h"] = "",
     ["<leader>v"] = "",
