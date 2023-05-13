@@ -88,9 +88,7 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
-    opts = function()
-      return require "custom.configs.todo-comments"
-    end,
+    opts = require "custom.configs.todo-comments",
     config = function(_, opts)
       require("todo-comments").setup(opts)
     end,
@@ -98,9 +96,8 @@ local plugins = {
 
   {
     "danymat/neogen",
-    opts = function()
-      return require "custom.configs.neogen"
-    end,
+    lazy = true,
+    opts = require "custom.configs.neogen",
     config = function(_, opts)
       require("neogen").setup(opts)
     end,
@@ -115,6 +112,15 @@ local plugins = {
     event = "BufRead",
     config = function()
       require("symbols-outline").setup()
+    end,
+  },
+
+  {
+    "rmagatti/goto-preview",
+    lazy = true,
+    opts = require "custom.configs.goto-preview",
+    config = function(_, opts)
+      require("goto-preview").setup(opts)
     end,
   },
   -- To make a plugin not be loaded

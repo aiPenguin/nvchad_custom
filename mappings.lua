@@ -38,6 +38,10 @@ M.telescope = {
     ["<leader>fp"] = { "<cmd> Telescope projects <CR>", "find projects" },
     ["<leader>d"] = { "<cmd> Telescope diagnostics <CR>", "show diagnostics" },
     ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
+    -- git
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
+    -- pick a hidden term
+    ["<leader>tt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },
   },
 }
 
@@ -135,7 +139,7 @@ M.todo_comments = {
     ["<leader>m"] = { "<cmd> Telescope todo-comments <CR>", "show TODOs" },
   },
 }
-require("core.utils").load_mappings("todo_comments")
+require("core.utils").load_mappings "todo_comments"
 
 M.noegen = {
   plugin = true,
@@ -148,22 +152,37 @@ M.noegen = {
     },
   },
 }
-require("core.utils").load_mappings("noegen")
+require("core.utils").load_mappings "noegen"
 
 M.symbols_outline = {
   plugin = true,
   n = {
-    ['<leader>o'] = {"<cmd> SymbolsOutline <CR>", "toggle symbols outline"}
-  }
+    ["<leader>o"] = { "<cmd> SymbolsOutline <CR>", "toggle symbols outline" },
+  },
 }
-require("core.utils").load_mappings("symbols_outline")
+require("core.utils").load_mappings "symbols_outline"
+
+M.goto_preview = {
+  plugin = true,
+  n = {
+    ["<leader>pd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "preview devifition" },
+    ["<leader>pt"] = {
+      "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+      "preview type definition",
+    },
+    ["<leader>pi"] = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "preview implementation" },
+    ["<leader>px"] = { "<cmd>lua require('goto-preview').close_all_win()<CR>", "closs all preview windows" },
+    ["<leader>pr"] = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "preview references" },
+  },
+}
+require("core.utils").load_mappings "goto_preview"
 
 M.disabled = {
   n = {
     -- nvterm
     ["<leader>h"] = "",
     ["<leader>v"] = "",
-    -- gitsings
+    -- gitsigns
     ["<leader>rh"] = "",
     ["<leader>ph"] = "",
     ["<leader>gb"] = "",
