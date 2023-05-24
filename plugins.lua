@@ -149,6 +149,11 @@ local plugins = {
       require("diffview").setup()
     end,
   },
+
+  {
+    "github/copilot.vim",
+    event = "InsertEnter",
+  },
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
