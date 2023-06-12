@@ -112,6 +112,26 @@ M.gitsigns = {
       end,
       "toggle current line blame",
     },
+  },
+  v = {
+    ["<leader>hs"] = {
+      function()
+        require("gitsigns").stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+      end,
+      "stage hunk",
+    },
+    ["<leader>hr"] = {
+      function()
+        require("gitsigns").reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+      end,
+      "reset_hunk",
+    },
+  },
+  o = {
+    -- Text object
+    ["ih"] = { ":<C-U>Gitsigns select_hunk<CR>", "select hunk" },
+  },
+  x = {
     -- Text object
     ["ih"] = { ":<C-U>Gitsigns select_hunk<CR>", "select hunk" },
   },
