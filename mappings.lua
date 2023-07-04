@@ -5,7 +5,7 @@ M.general = {
   n = {
     -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>s"] = { "<cmd> w <CR>", "save file" },
-    ["<leader>zf"] = { "<cmd> set foldmethod=indent <CR>", "set fold method to indent" },
+    ["<leader>zm"] = { "<cmd> set foldmethod=indent <CR>", "set fold method to indent" },
     ["<leader>nb"] = { "<cmd> enew <CR>", "new buffer" },
     ["<leader>ln"] = { "<cmd> set nu! <CR>", "toggle line number" },
     ["<leader>hD"] = { "<cmd> diffoff <CR>", "closs diffview" },
