@@ -153,6 +153,9 @@ local plugins = {
   {
     "github/copilot.vim",
     event = "InsertEnter",
+    config = function()
+      require "custom.configs.copilot"
+    end,
   },
   -- To make a plugin not be loaded
   -- {
