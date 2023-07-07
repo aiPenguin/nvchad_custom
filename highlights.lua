@@ -13,6 +13,7 @@ M.override = {
     fg = "blue",
     bg = "darker_black",
   },
+  IndentBlanklineContextChar = { fg = "baby_pink" },
 }
 
 ---@type HLTable
