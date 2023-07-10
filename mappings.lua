@@ -9,6 +9,7 @@ M.general = {
     ["<leader>nb"] = { "<cmd> enew <CR>", "new buffer" },
     ["<leader>ln"] = { "<cmd> set nu! <CR>", "toggle line number" },
     ["<leader>hD"] = { "<cmd> diffoff <CR>", "closs diffview" },
+    ["<leader>tw"] = { "<cmd> set wrap! <CR>", "toggle wrap" },
   },
 }
 
