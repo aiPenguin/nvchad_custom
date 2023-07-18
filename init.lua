@@ -24,12 +24,14 @@ end
 -- vim.opt.foldmethod     = 'expr'
 -- vim.opt.foldexpr       = 'nvim_treesitter#foldexpr()'
 ---WORKAROUND
-autocmd({'BufEnter','BufAdd','BufNew','BufNewFile','BufWinEnter'}, {
-  group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
-  callback = function()
-    opt.foldmethod     = 'expr'
-    opt.foldexpr       = 'nvim_treesitter#foldexpr()'
-    opt.foldlevelstart = 99
-  end
-})
+-- autocmd({'BufAdd','BufNew','BufNewFile'}, {
+--   group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+--   callback = function()
+--     opt.foldmethod     = 'expr'
+--     opt.foldexpr       = 'nvim_treesitter#foldexpr()'
+--     opt.foldlevelstart = 99
+--   end
+-- })
+opt.foldmethod = "indent"
+opt.foldlevelstart = 99
 ---ENDWORKAROUND
