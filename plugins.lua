@@ -1,5 +1,4 @@
 local overrides = require "custom.configs.overrides"
-local cmp = require "cmp"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -48,24 +47,13 @@ local plugins = {
     event = { "CmdlineEnter", "InsertEnter" },
     opts = overrides.cmp,
     dependencies = {
-      { "hrsh7th/cmp-cmdline" },
-    },
-    -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-    cmp.setup.cmdline({ "/", "?" }, {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "buffer" },
+      {
+        "hrsh7th/cmp-cmdline",
+        config = function()
+          require "custom.configs.cmp-cmdline"
+        end,
       },
-    }),
-    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-    cmp.setup.cmdline(":", {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
-        { name = "path" },
-      }, {
-        { name = "cmdline" },
-      }),
-    }),
+    },
   },
 
   -- Install a plugin
